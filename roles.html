@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>E-Board Roles — FURM · Brown PLME</title>
+<style>
+  :root{
+    --bark:#3d2b1f;--bark2:#5a4230;--cream:#f6efe3;--cream2:#fbf6ec;
+    --pine:#2f5d43;--pine2:#3f7a58;--moss:#6f9c6a;--sun:#e6b23e;--sun2:#f2c766;
+    --line:#e0d3bd;--card:#ffffff;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;color:var(--bark);
+    font:16px/1.7 "Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;background:var(--cream)}
+  a{color:var(--pine)}
+  .wrap{max-width:820px;margin:0 auto;padding:0 20px}
+  header{text-align:center;padding:44px 20px 30px}
+  header .logo{width:110px;height:110px;object-fit:contain;background:var(--cream2);
+    border:4px solid var(--pine);border-radius:50%;box-shadow:0 8px 0 rgba(47,93,67,.2)}
+  .sub{display:inline-block;margin-top:12px;font-size:12px;letter-spacing:2px;text-transform:uppercase;
+    color:#fff;background:var(--pine);padding:5px 14px;border-radius:20px}
+  header h1{font-size:34px;margin:12px 0 2px;color:var(--pine)}
+  header .tag{color:var(--bark2);margin:0 auto;max-width:560px}
+  nav{display:flex;gap:8px;justify-content:center;margin-top:16px;flex-wrap:wrap}
+  nav a{text-decoration:none;color:var(--pine);border:2px solid var(--pine);border-radius:20px;
+    padding:6px 15px;font-size:14px;background:var(--cream2)}
+  nav a:hover{background:var(--pine);color:#fff}
+  nav a.home{background:var(--pine);color:#fff}
+
+  .role{background:var(--card);border:2px solid var(--pine);border-radius:16px;padding:20px 22px;margin:16px 0;
+    box-shadow:0 5px 0 rgba(47,93,67,.18);scroll-margin-top:20px}
+  .role.open{border-style:dashed}
+  .role h2{color:var(--pine);font-size:22px;margin:0 0 2px}
+  .role .badge{display:inline-block;font-size:11px;letter-spacing:1px;text-transform:uppercase;font-weight:700;
+    border-radius:12px;padding:3px 10px;margin-bottom:10px}
+  .badge.filled{background:#e7f0e8;color:var(--pine);border:1px solid var(--pine2)}
+  .badge.open{background:#fff3d6;color:#7a5b16;border:1px solid var(--sun)}
+  .role ul{margin:8px 0 0;padding-left:20px}
+  .role li{margin:5px 0;color:var(--bark2)}
+  .who{color:var(--bark2);font-size:14px;margin-top:6px}
+  .who b{color:var(--bark)}
+
+  .cta{text-align:center;background:var(--pine);color:#fff;border-radius:18px;padding:26px 20px;margin:24px 0}
+  .cta h2{color:#fff;margin:0 0 6px}
+  .cta p{color:#e7f0e8;max-width:520px;margin:0 auto 16px}
+  .btn{display:inline-block;text-decoration:none;background:var(--sun);color:#3a2c08;font-weight:700;
+    border-radius:24px;padding:12px 24px;font-size:15px;box-shadow:0 5px 0 rgba(0,0,0,.18)}
+  .btn:hover{background:var(--sun2)}
+  footer{text-align:center;padding:38px 20px 50px;color:var(--bark2);font-size:13.5px}
+  footer .beat{color:var(--sun);font-weight:700}
+</style>
+</head>
+<body>
+
+<header>
+  <a href="index.html" aria-label="FURM home"><img class="logo" src="assets/logo_padded.png" alt="FURM logo"></a>
+  <div><span class="sub">FURM · Brown PLME</span></div>
+  <h1>E-Board Roles</h1>
+  <p class="tag">What each role on the FURM board actually does. Filled roles and the ones we're recruiting for this fall.</p>
+  <nav>
+    <a class="home" href="index.html">&larr; Home</a>
+    <a href="#open">Open positions</a>
+    <a href="linktree.html">All Links</a>
+  </nav>
+</header>
+
+<div class="wrap">
+
+  <div class="role" id="president">
+    <span class="badge filled">Filled</span>
+    <h2>President</h2>
+    <ul>
+      <li>Oversees organizational planning, leadership, and long-term goals.</li>
+      <li>Maintains communication with the PLME Office and external collaborators.</li>
+      <li>Guides FURM programming and mentorship initiatives.</li>
+    </ul>
+    <p class="who"><b>Currently:</b> Shine Gerkariah</p>
+  </div>
+
+  <div class="role" id="community-engagement-chair">
+    <span class="badge filled">Filled</span>
+    <h2>Community Engagement Chair</h2>
+    <ul>
+      <li>Leads community-building, mentorship, recruitment, and student engagement.</li>
+      <li>Organizes mentorship programming (like CubCare) and engagement events.</li>
+      <li>Helps keep the organization visible and students involved all year.</li>
+    </ul>
+    <p class="who"><b>Currently:</b> Rachel Xu &amp; Isabella Zelaya Alves</p>
+  </div>
+
+  <h2 id="open" style="color:var(--pine);text-align:center;margin-top:30px">Open Positions &mdash; Join Us!</h2>
+
+  <div class="role open" id="secretary">
+    <span class="badge open">Open</span>
+    <h2>Secretary</h2>
+    <ul>
+      <li>Manages communication, outreach, documentation, and organizational systems.</li>
+      <li>Coordinates emails, collaborations, and meeting notes.</li>
+      <li>Helps maintain the FURM Google Drive and communication infrastructure.</li>
+    </ul>
+  </div>
+
+  <div class="role open" id="treasurer">
+    <span class="badge open">Open</span>
+    <h2>Treasurer</h2>
+    <ul>
+      <li>Manages budgeting, reimbursements, and financial planning.</li>
+      <li>Maintains financial records and assists with funding initiatives.</li>
+      <li>Helps the organization navigate funding systems and sponsorships.</li>
+    </ul>
+  </div>
+
+  <div class="role open" id="underclassman-liaison">
+    <span class="badge open">Open</span>
+    <h2>Underclassman Liaison</h2>
+    <p class="who"><b>For:</b> Class of 2029 &amp; 2030</p>
+    <ul>
+      <li>Leads mentee recruitment and first-year turnout.</li>
+      <li>Maximizes first-year participation and keeps younger students engaged.</li>
+    </ul>
+  </div>
+
+  <div class="role open" id="upperclassman-liaison">
+    <span class="badge open">Open</span>
+    <h2>Upperclassman Liaison</h2>
+    <p class="who"><b>For:</b> Class of 2027 &amp; 2028</p>
+    <ul>
+      <li>Leads mentor recruitment and upperclassman turnout.</li>
+      <li>Keeps upperclassmen involved for long-term community and continuity.</li>
+    </ul>
+  </div>
+
+  <div class="cta">
+    <h2>Ready to join?</h2>
+    <p>All positions are year-long. Priority deadline is September 18.</p>
+    <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSfi1vsXNLpz-qBUR8sxiF4TCE6c5jD-78eeAryZobPqVOw-NA/viewform" target="_blank" rel="noopener">Apply for the E-Board &rarr;</a>
+  </div>
+
+</div>
+
+<footer>
+  Built for community, care, and belonging. <span class="beat">&#9829;</span><br>
+  FURM &middot; Brown PLME
+</footer>
+
+</body>
+</html>

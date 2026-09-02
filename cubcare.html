@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CubCare — FURM's Mentor / Mentee Program · Brown PLME</title>
+<style>
+  :root{
+    --bark:#3d2b1f;--bark2:#5a4230;--cream:#f6efe3;--cream2:#fbf6ec;
+    --pine:#2f5d43;--pine2:#3f7a58;--moss:#6f9c6a;--sun:#e6b23e;--sun2:#f2c766;
+    --line:#e0d3bd;--card:#ffffff;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;color:var(--bark);
+    font:16px/1.7 "Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;background:var(--cream)}
+  a{color:var(--pine)}
+  .wrap{max-width:900px;margin:0 auto;padding:0 20px}
+
+  header{text-align:center;padding:44px 20px 36px}
+  header a.logolink{display:inline-block}
+  header .logo{width:120px;height:120px;object-fit:contain;background:var(--cream2);
+    border:4px solid var(--pine);border-radius:50%;box-shadow:0 8px 0 rgba(47,93,67,.2)}
+  .sub{display:inline-block;margin-top:12px;font-size:12px;letter-spacing:2px;text-transform:uppercase;
+    color:#fff;background:var(--pine);padding:5px 14px;border-radius:20px}
+  header h1{font-size:40px;margin:12px 0 2px;color:var(--pine);letter-spacing:.5px}
+  header .tag{color:var(--bark2);margin:0 auto;max-width:560px;font-size:17px}
+  nav{display:flex;gap:8px;justify-content:center;margin-top:18px;flex-wrap:wrap}
+  nav a{text-decoration:none;color:var(--pine);border:2px solid var(--pine);border-radius:20px;
+    padding:6px 15px;font-size:14px;background:var(--cream2)}
+  nav a:hover{background:var(--pine);color:#fff}
+  nav a.home{background:var(--pine);color:#fff}
+
+  section{padding:34px 0;border-top:1px solid var(--line)}
+  h2{color:var(--pine);font-size:25px;margin:0 0 6px}
+  h2 .leaf{display:inline-block;width:12px;height:12px;margin-right:10px;border-radius:0 50% 50% 50%;
+    background:var(--moss);transform:rotate(45deg)}
+  .lede{color:var(--bark2);max-width:720px}
+  ul{padding-left:22px}li{margin:6px 0}
+
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:14px}
+  .bearcard{background:var(--card);border:2px solid var(--pine);border-radius:18px;padding:20px;
+    box-shadow:0 5px 0 rgba(47,93,67,.18)}
+  .bearcard h3{margin:0 0 4px;color:var(--pine);font-size:21px}
+  .bearcard .who{color:var(--sun);font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px}
+  .cardlink{display:inline-block;margin-top:12px;color:var(--pine);font-weight:700;text-decoration:underline;text-underline-offset:2px}
+  .cardlink:hover{color:var(--sun)}
+
+  .steps{counter-reset:step;list-style:none;padding:0;margin-top:14px}
+  .steps li{position:relative;padding:10px 0 10px 46px;border-bottom:1px dashed var(--line)}
+  .steps li:before{counter-increment:step;content:counter(step);position:absolute;left:0;top:8px;
+    width:30px;height:30px;border-radius:50%;background:var(--pine);color:#fff;text-align:center;line-height:30px;font-weight:700}
+
+  .cta{text-align:center;background:var(--pine);color:#fff;border-radius:20px;padding:30px 20px;margin-top:10px}
+  .cta h2{color:#fff}
+  .cta p{color:#e7f0e8;max-width:560px;margin:6px auto 18px}
+  .btnrow{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+  .btn{display:inline-block;text-decoration:none;background:var(--sun);color:#3a2c08;font-weight:700;
+    border-radius:24px;padding:12px 24px;font-size:15px;box-shadow:0 5px 0 rgba(0,0,0,.18)}
+  .btn:hover{background:var(--sun2)}
+  .btn.ghost{background:transparent;color:#fff;border:2px solid var(--sun2);box-shadow:none}
+  .btn.ghost:hover{background:var(--sun2);color:#3a2c08}
+
+  footer{text-align:center;padding:40px 20px 52px;color:var(--bark2);font-size:13.5px;
+    background:radial-gradient(900px 300px at 50% 120%, rgba(230,178,62,.30), transparent 62%)}
+  footer .beat{color:var(--sun);font-weight:700}
+  @media(max-width:600px){.two{grid-template-columns:1fr}header h1{font-size:32px}}
+</style>
+</head>
+<body>
+
+<header>
+  <a class="logolink" href="index.html" aria-label="FURM home"><img class="logo" src="assets/logo_padded.png" alt="FURM logo"></a>
+  <div><span class="sub">FURM · Brown PLME</span></div>
+  <h1>CubCare</h1>
+  <p class="tag">Our mentor / mentee program &mdash; genuine connections across PLME, big bear to little bear.</p>
+  <nav>
+    <a class="home" href="index.html">&larr; Home</a>
+    <a href="#what">What it is</a>
+    <a href="#how">How pairing works</a>
+    <a href="#event">Pairing event</a>
+    <a href="#join">Sign up</a>
+  </nav>
+</header>
+
+<div class="wrap">
+
+  <section id="what">
+    <h2><span class="leaf"></span>What CubCare is</h2>
+    <p class="lede">
+      CubCare pairs FURM underclassmen with upperclassmen for real connection, support, and guidance.
+      It's less about formal mentorship and more about community: friendship, belonging, and helping each
+      other navigate premed and PLME without feeling alone. Little bears and big bears, looking out for one another.
+    </p>
+  </section>
+
+  <section id="roles">
+    <h2><span class="leaf"></span>Little bears &amp; big bears</h2>
+    <div class="two">
+      <div class="bearcard">
+        <div class="who">Mentee &middot; Little Bear</div>
+        <h3>First-years</h3>
+        <p>New to PLME? Get paired with someone who's been there, someone to ask the questions you don't want to ask anyone else, and who genuinely wants to see you thrive.</p>
+        <a class="cardlink" href="https://docs.google.com/forms/d/e/1FAIpQLSfJU_5m779_9eZi17vmX-gPZ4DsJ904jfHjjTrIIHsuzYT6tw/viewform" target="_blank" rel="noopener">&rarr; Sign up as a Mentee</a>
+      </div>
+      <div class="bearcard">
+        <div class="who">Mentor &middot; Big Bear</div>
+        <h3>Sophomores, juniors &amp; seniors</h3>
+        <p>Been through it? Share what you've learned. Mentoring keeps our community strong and gives back the support you once needed.</p>
+        <a class="cardlink" href="https://docs.google.com/forms/d/e/1FAIpQLSc7dApJ7fqsCqQla1fO8mjksWYYmtkTjChx7i97kSPd4QJG5A/viewform" target="_blank" rel="noopener">&rarr; Sign up as a Mentor</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="how">
+    <h2><span class="leaf"></span>How pairing works</h2>
+    <p class="lede">Good pairings matter far more than random matches, so we're intentional about it. We pair based on:</p>
+    <ul>
+      <li>Specialty and academic interests</li>
+      <li>Hobbies and personality</li>
+      <li>Identity and community background</li>
+      <li>Extracurricular involvement</li>
+    </ul>
+    <p class="lede">The goal is a pairing that feels comfortable, intentional, and built to last, not just a name over email.</p>
+  </section>
+
+  <section id="event">
+    <h2><span class="leaf"></span>The pairing event</h2>
+    <p class="lede">In October, we bring everyone together to actually meet, not just swap emails. Warm, low-pressure, community-first.</p>
+    <ol class="steps">
+      <li>Arrive &amp; mingle over snacks</li>
+      <li>Short intro to CubCare</li>
+      <li>Pairing announcements</li>
+      <li>Guided conversation with your match</li>
+      <li>Casual hangout afterward</li>
+    </ol>
+  </section>
+
+  <section id="join">
+    <div class="cta">
+      <h2>Join CubCare</h2>
+      <p>Sign-ups are open, both forms are due <b>October 1</b>. Little bear or big bear, we'd love to have you.</p>
+      <div class="btnrow">
+        <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSfJU_5m779_9eZi17vmX-gPZ4DsJ904jfHjjTrIIHsuzYT6tw/viewform" target="_blank" rel="noopener">Sign up as a Mentee &rarr;</a>
+        <a class="btn ghost" href="https://docs.google.com/forms/d/e/1FAIpQLSc7dApJ7fqsCqQla1fO8mjksWYYmtkTjChx7i97kSPd4QJG5A/viewform" target="_blank" rel="noopener">Sign up as a Mentor &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  Built for community, care &amp; belonging. <span class="beat">&#9829;</span><br>
+  CubCare &middot; FURM &middot; Brown PLME
+</footer>
+
+</body>
+</html>

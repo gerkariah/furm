@@ -1,0 +1,26 @@
+{
+  "brand": {
+    "sub": "Brown PLME",
+    "name": "FURM",
+    "taglineLine1": "First-Generation Underrepresented",
+    "taglineLine2": "in Research & Medicine"
+  },
+  "links": [
+    { "label": "Our FURM Website", "url": "index.html", "note": "Meet the Board & Learn More" },
+    { "label": "Join Our Mailing List", "url": "https://docs.google.com/forms/d/e/1FAIpQLScX_52BReC03vlsO5oBbz2elSsocjoFOcmycR6P5b9T1pLfoA/viewform", "note": "Never Miss an Event" },
+    { "label": "Join Our E-Board", "url": "https://docs.google.com/forms/d/e/1FAIpQLSfi1vsXNLpz-qBUR8sxiF4TCE6c5jD-78eeAryZobPqVOw-NA/viewform", "note": "Year-Long Roles · Priority Deadline Sept 18" },
+    { "label": "CubCare Mentee Sign-Up", "url": "https://docs.google.com/forms/d/e/1FAIpQLSfJU_5m779_9eZi17vmX-gPZ4DsJ904jfHjjTrIIHsuzYT6tw/viewform", "note": "First-Years · Class of 2030 · Due Oct 1" },
+    { "label": "CubCare Mentor Sign-Up", "url": "https://docs.google.com/forms/d/e/1FAIpQLSc7dApJ7fqsCqQla1fO8mjksWYYmtkTjChx7i97kSPd4QJG5A/viewform", "note": "Sophomores, Juniors & Seniors · Due Oct 1" },
+    { "label": "About CubCare", "url": "cubcare.html", "note": "Our Mentor / Mentee Program" },
+    { "label": "Email Us", "url": "mailto:shine@brown.edu", "note": "Reach the E-Board" }
+  ],
+  "_ready_to_publish": {
+    "note": "These pages already exist. To show one on the link tree, cut its entry from here and paste it into the links array above.",
+    "links": [
+      { "label": "Kickoff Social", "url": "events/kickoff.html", "note": "Our Welcome Event · Late September" },
+      { "label": "Life @ Med School", "url": "events/med-school.html", "note": "An Honest Panel · November" },
+      { "label": "De-Stress Events", "url": "events/destress.html", "note": "Finals Decompress · Reading Period" },
+      { "label": "Spring 2027 Lineup", "url": "events/spring.html", "note": "A Look Ahead" }
+    ]
+  }
+}

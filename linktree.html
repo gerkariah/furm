@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>FURM · Links</title>
+<style>
+  :root{
+    --bark:#3d2b1f;--bark2:#5a4230;--cream:#f6efe3;--cream2:#fbf6ec;
+    --pine:#2f5d43;--pine2:#3f7a58;--moss:#6f9c6a;--sun:#e6b23e;--sun2:#f2c766;
+    --line:#e0d3bd;--card:#ffffff;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{color:var(--bark);
+    font:16px/1.55 "Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+    background:var(--cream);
+    min-height:100vh;min-height:100dvh;
+    padding:26px 16px calc(40px + env(safe-area-inset-bottom));
+    -webkit-text-size-adjust:100%}
+  .tree{width:100%;max-width:430px;margin:0 auto}
+
+  .head{text-align:center;margin-bottom:22px}
+  .logo{width:118px;height:118px;object-fit:contain;
+    background:var(--cream2);border:3px solid var(--pine);border-radius:50%;
+    box-shadow:0 5px 0 rgba(47,93,67,.18)}
+  .sub{display:inline-block;margin-top:12px;font-size:11px;letter-spacing:2.5px;text-transform:uppercase;
+    color:#fff;background:var(--pine);padding:4px 13px;border-radius:20px}
+  .nameLink,.subLink{text-decoration:none}
+  h1{font-size:30px;margin:8px 0 6px;letter-spacing:1px;color:var(--pine)}
+  .tag{margin:0 auto;color:var(--bark2);font-size:14.5px;line-height:1.4}
+  .tag span{display:block}
+
+  .links{margin-top:22px;display:flex;flex-direction:column;gap:13px}
+  a.link{display:block;text-decoration:none;color:var(--bark);
+    background:var(--card);border:2px solid var(--pine);border-radius:16px;
+    padding:15px 16px;
+    box-shadow:0 4px 0 rgba(47,93,67,.22);
+    transition:transform .12s ease, box-shadow .12s ease, background .12s ease}
+  a.link:active{transform:translateY(2px);box-shadow:0 2px 0 rgba(47,93,67,.3);background:var(--cream2)}
+  @media(hover:hover){a.link:hover{transform:translateY(-2px);background:var(--cream2);box-shadow:0 6px 0 rgba(47,93,67,.3)}}
+  .lbl{font-size:17.5px;font-weight:600;color:var(--pine);display:flex;align-items:center}
+  .leaf{display:inline-block;width:10px;height:10px;margin-right:9px;border-radius:0 50% 50% 50%;
+    background:var(--moss);transform:rotate(45deg);flex:none}
+  .note{font-size:13px;color:var(--bark2);margin-top:3px;padding-left:19px}
+
+  .foot{text-align:center;margin-top:26px;font-size:12.5px;color:var(--bark2);line-height:1.7}
+  .foot .beat{color:var(--sun);font-weight:700}
+  .miss{background:#fff3d6;border:1px dashed var(--sun);color:#7a5b16;padding:9px 12px;border-radius:11px;
+    font-size:12.5px;text-align:center;margin-top:9px}
+  /* falling leaves — sparse, slow, side margins only */
+  #leaves{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+  .tree{position:relative;z-index:1}
+  .leaf-fall{position:absolute;top:-40px;width:22px;height:22px;opacity:.5;
+    will-change:transform;animation:leafDrift linear forwards}
+  @keyframes leafDrift{
+    0%{transform:translateY(-40px) translateX(0) rotate(0deg);opacity:0}
+    8%{opacity:.5}
+    92%{opacity:.5}
+    100%{transform:translateY(var(--fall,110vh)) translateX(var(--sway,20px)) rotate(var(--spin,180deg));opacity:0}
+  }
+  @media(prefers-reduced-motion:reduce){#leaves{display:none}}
+</style>
+</head>
+<body>
+<div class="tree">
+  <div class="head">
+    <a href="index.html" aria-label="FURM website"><img class="logo" src="assets/logo_padded.png" alt="FURM logo"></a>
+    <div><a href="index.html" class="subLink"><span class="sub" id="brandSub">Brown PLME</span></a></div>
+    <a href="index.html" class="nameLink"><h1 id="brandName">FURM</h1></a>
+    <p class="tag"><span id="tag1">First-Generation Underrepresented</span><span id="tag2">in Research &amp; Medicine</span></p>
+  </div>
+
+  <div class="links" id="links"></div>
+
+  <div class="foot">
+    Built for community, care &amp; belonging. <span class="beat">&#9829;</span><br>
+    Brown Bears &middot; PLME
+  </div>
+</div>
+
+<div id="leaves" aria-hidden="true"></div>
+
+<script>
+fetch('links.json')
+  .then(r => r.json())
+  .then(data => {
+    var b = data.brand || {};
+    if (b.sub) document.getElementById('brandSub').textContent = b.sub;
+    if (b.name) document.getElementById('brandName').textContent = b.name;
+    if (b.taglineLine1) document.getElementById('tag1').textContent = b.taglineLine1;
+    if (b.taglineLine2) document.getElementById('tag2').textContent = b.taglineLine2;
+    var box = document.getElementById('links');
+    (data.links || []).forEach(function(item){
+      var a = document.createElement('a');
+      a.className = 'link';
+      var placeholder = item.url && item.url.indexOf('REPLACE_') === 0;
+      a.href = placeholder ? '#' : item.url;
+      var internal = item.url.indexOf('mailto:') === 0 || item.url.indexOf('.html') !== -1;
+      if (!placeholder && !internal) {
+        a.target = '_blank'; a.rel = 'noopener';
+      }
+      var lbl = document.createElement('div');
+      lbl.className = 'lbl';
+      lbl.innerHTML = '<span class="leaf"></span>' + item.label;
+      a.appendChild(lbl);
+      if (item.note) {
+        var n = document.createElement('div');
+        n.className = 'note'; n.textContent = item.note;
+        a.appendChild(n);
+      }
+      if (placeholder) {
+        var m = document.createElement('div');
+        m.className = 'miss'; m.textContent = 'Link coming soon — add the URL in links.json';
+        a.appendChild(m);
+      }
+      box.appendChild(a);
+    });
+  })
+  .catch(function(){
+    document.getElementById('links').innerHTML =
+      '<div class="miss">Could not load links.json. Open through a web server (or GitHub Pages), not by double-clicking.</div>';
+  });
+</script>
+
+<script>
+(function(){
+  var box = document.getElementById('leaves');
+  if(!box) return;
+  var greens = ['#2f5d43','#3f7a58','#6f9c6a','#e6b23e'];
+  function leafSVG(color){
+    return '<svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">'
+      + '<path d="M16 2 C26 8 28 22 16 30 C4 22 6 8 16 2 Z" fill="'+color+'"/>'
+      + '<path d="M16 5 L16 28" stroke="rgba(255,255,255,.35)" stroke-width="1.2"/>'
+      + '</svg>';
+  }
+  var shapes = [0,1,2,3,4,5].map(function(i){ return leafSVG(greens[i % greens.length]); });
+  function gutters(){
+    var c = document.querySelector('.tree');
+    var vw = window.innerWidth, pad = 12;
+    if(!c) return {left:0, right:vw, leftW:vw*0.12, rightW:vw*0.12, vw:vw};
+    var r = c.getBoundingClientRect();
+    var left = Math.max(0, r.left - pad);
+    var right = Math.min(vw, r.right + pad);
+    return {left:left, right:right, leftW:left, rightW:vw-right, vw:vw};
+  }
+  function spawn(){
+    var g = gutters();
+    var size = 14 + Math.random()*16;
+    if(g.leftW < size+6 && g.rightW < size+6) return;
+    var el = document.createElement('div');
+    el.className = 'leaf-fall';
+    var useLeft;
+    if(g.leftW < size+6) useLeft = false;
+    else if(g.rightW < size+6) useLeft = true;
+    else useLeft = Math.random() < (g.leftW/(g.leftW+g.rightW));
+    var xpx = useLeft
+      ? (Math.random()*(g.left-size))
+      : (g.right + Math.random()*(g.vw - g.right - size));
+    el.style.left = xpx + 'px';
+    el.style.width = size + 'px'; el.style.height = size + 'px';
+    var fall = Math.max(document.documentElement.scrollHeight, window.innerHeight) + 60;
+    el.style.setProperty('--fall', fall + 'px');
+    var dur = fall / 90 + Math.random()*6;
+    el.style.animationDuration = dur + 's';
+    var room = useLeft ? g.leftW : g.rightW;
+    var maxSway = Math.max(6, Math.min(28, (room - size) / 2));
+    el.style.setProperty('--sway', (Math.random()*2*maxSway - maxSway) + 'px');
+    el.style.setProperty('--spin', (Math.random()*360 - 180) + 'deg');
+    el.style.opacity = 0.35 + Math.random()*0.25;
+    el.innerHTML = shapes[Math.floor(Math.random()*shapes.length)];
+    box.appendChild(el);
+    setTimeout(function(){ el.remove(); }, dur*1000 + 500);
+  }
+  for(var i=0;i<7;i++) setTimeout(spawn, i*600);
+  setInterval(spawn, 1150);
+})();
+</script>
+</body>
+</html>
