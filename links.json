@@ -17,7 +17,6 @@
   "_ready_to_publish": {
     "note": "These pages already exist. To show one on the link tree, cut its entry from here and paste it into the links array above.",
     "links": [
-      { "label": "Kickoff Social", "url": "events/kickoff.html", "note": "Our Welcome Event · Late September" },
       { "label": "Life @ Med School", "url": "events/med-school.html", "note": "An Honest Panel · November" },
       { "label": "De-Stress Events", "url": "events/destress.html", "note": "Finals Decompress · Reading Period" },
       { "label": "Spring 2027 Lineup", "url": "events/spring.html", "note": "A Look Ahead" }
